@@ -1,8 +1,10 @@
 import csv
 import random
+import sys
 
 filtered_rows = []
-with open('user_albums_export.csv') as f:
+filename_arg = sys.argv[1]
+with open(filename_arg) as f:
     reader = csv.DictReader(f)
     for row in reader:
         if int(row['Rating']) >= 7:
